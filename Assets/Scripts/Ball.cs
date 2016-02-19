@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Ball : MonoBehaviour {
 
-	public Paddle paddle;
+	private Paddle paddle;
 
 	private Vector3 paddleToBallVector;
 
@@ -12,6 +12,7 @@ public class Ball : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		paddle = GameObject.FindObjectOfType<Paddle> ();
 		// Save the relative position of ball to paddle
 		paddleToBallVector = this.transform.position - paddle.transform.position;
 	}
