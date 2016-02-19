@@ -55,6 +55,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHits: 2
+  hitSprites:
+  - {fileID: 21300006, guid: 4ddd7c18a52ab4dd58f1d7ae4882c574, type: 3}
 --- !u!212 &21229450
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -79,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ff99bc19deb6d4dd4abb5dc721f9d389, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ddd7c18a52ab4dd58f1d7ae4882c574, type: 3}
   m_Color: {r: .352941155, g: .491277844, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -88,6 +90,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: hitSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.r
       value: .352941155
@@ -100,6 +106,16 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ddd7c18a52ab4dd58f1d7ae4882c574,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: hitSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300006, guid: 4ddd7c18a52ab4dd58f1d7ae4882c574,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118984}
