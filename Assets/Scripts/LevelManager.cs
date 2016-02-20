@@ -13,6 +13,13 @@ public class LevelManager : MonoBehaviour {
 		Application.LoadLevel (Application.loadedLevel + 1);
 	}
 
+	public void OnBrickDestroyed ()
+	{
+		if (Brick.bricksLeft <= 0) {
+			LoadNextLevel();
+		}
+	}
+
 	public void QuitRequest() {
 		Debug.Log ("Quit requested");
 		Application.Quit ();
