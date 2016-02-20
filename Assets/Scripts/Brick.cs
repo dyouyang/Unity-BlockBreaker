@@ -5,7 +5,7 @@ public class Brick : MonoBehaviour {
 
 	private LevelManager levelManager;
 
-	public int maxHits;
+	private int maxHits;
 	private int timesHit;
 
 	public Sprite[] hitSprites;
@@ -15,6 +15,7 @@ public class Brick : MonoBehaviour {
 
 		levelManager = GameObject.FindObjectOfType<LevelManager> ();
 
+		maxHits = hitSprites.Length + 1;
 		timesHit = 0;
 	
 	}
@@ -25,15 +26,21 @@ public class Brick : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D collision) {
-		timesHit++;
 
+		if (gameObject.tag.Equals("Breakable")) {
+			HandleHit ();
+		}
+	}
+
+	void HandleHit() {
+		timesHit++;
+		
 		if (timesHit >= maxHits) {
 			Destroy (gameObject);
 		} else {
 			int spriteIndex = timesHit - 1;
 			gameObject.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
 		}
-		//SimulateWin ();
 	}
 
 	// TODO: remove when true win implemented
