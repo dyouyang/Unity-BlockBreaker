@@ -32,4 +32,15 @@ public class Ball : MonoBehaviour {
 			}
 		}
 	}
+
+	void OnCollisionEnter2D (Collision2D collision) {
+		if (gameStarted) {
+			gameObject.GetComponent<AudioSource> ().Play ();
+
+			// Apply random bounce to prevent boring loops
+			Vector2 randomBounce = new Vector2(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 0.2f));
+			GetComponent<Rigidbody2D>().velocity += randomBounce;
+		}
+
+	}
 }

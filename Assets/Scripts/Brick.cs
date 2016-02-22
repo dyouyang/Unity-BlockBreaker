@@ -12,6 +12,8 @@ public class Brick : MonoBehaviour {
 
 	public static int bricksLeft = 0;
 
+	public AudioClip crack;
+
 	private bool breakable;
 	// Use this for initialization
 	void Start () {
@@ -34,6 +36,9 @@ public class Brick : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D collision) {
+
+		// Play at point so sound doesn't end when brick destroyed.
+		AudioSource.PlayClipAtPoint (crack, transform.position);
 
 		if (breakable) {
 			HandleHit ();
