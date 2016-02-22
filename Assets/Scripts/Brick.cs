@@ -38,7 +38,7 @@ public class Brick : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D collision) {
 
 		// Play at point so sound doesn't end when brick destroyed.
-		AudioSource.PlayClipAtPoint (crack, transform.position);
+		AudioSource.PlayClipAtPoint (crack, transform.position, 0.5f);
 
 		if (breakable) {
 			HandleHit ();
